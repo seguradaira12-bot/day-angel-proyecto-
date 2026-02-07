@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="es" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1 Año de Amor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Dancing+Script:wght@500;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-dancing { font-family: 'Dancing Script', cursive; }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(244, 114, 182, 0.6)); }
+      50% { filter: drop-shadow(0 0 25px rgba(244, 114, 182, 0.9)); }
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      14% { transform: scale(1.15); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.15); }
+      70% { transform: scale(1); }
+    }
+    
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .heart-glow {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    
+    .heartbeat {
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+    
+    .sparkle {
+      animation: sparkle 2s ease-in-out infinite;
+    }
+    
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
+    
+    .bg-gradient {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, #f472b6 0%, #fb7185 50%, #f472b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .star {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-gradient overflow-auto"><!-- Stars Background -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none">
+   <div class="star sparkle" style="top: 10%; left: 20%;"></div>
+   <div class="star sparkle delay-1" style="top: 15%; left: 80%;"></div>
+   <div class="star sparkle delay-2" style="top: 30%; left: 10%;"></div>
+   <div class="star sparkle delay-3" style="top: 25%; left: 60%;"></div>
+   <div class="star sparkle delay-4" style="top: 40%; left: 90%;"></div>
+   <div class="star sparkle" style="top: 50%; left: 5%;"></div>
+   <div class="star sparkle delay-2" style="top: 60%; left: 75%;"></div>
+   <div class="star sparkle delay-1" style="top: 70%; left: 30%;"></div>
+   <div class="star sparkle delay-3" style="top: 80%; left: 85%;"></div>
+   <div class="star sparkle delay-4" style="top: 85%; left: 15%;"></div>
+   <div class="star sparkle delay-2" style="top: 5%; left: 45%;"></div>
+   <div class="star sparkle delay-1" style="top: 95%; left: 55%;"></div>
+  </div>
+  <div class="relative min-h-full w-full flex flex-col items-center justify-center px-4 py-12"><!-- Floating Hearts Background -->
+   <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <svg class="absolute float-animation" style="top: 10%; left: 5%; animation-delay: 0s;" width="30" height="30" viewbox="0 0 24 24" fill="#f472b6" opacity="0.3"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+    </svg>
+    <svg class="absolute float-animation" style="top: 60%; left: 90%; animation-delay: 1s;" width="25" height="25" viewbox="0 0 24 24" fill="#fb7185" opacity="0.25"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+    </svg>
+    <svg class="absolute float-animation" style="top: 80%; left: 10%; animation-delay: 2s;" width="20" height="20" viewbox="0 0 24 24" fill="#f472b6" opacity="0.2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+    </svg>
+    <svg class="absolute float-animation" style="top: 30%; left: 85%; animation-delay: 3s;" width="35" height="35" viewbox="0 0 24 24" fill="#f472b6" opacity="0.2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+    </svg>
+   </div><!-- Main Content -->
+   <div class="relative z-10 text-center max-w-2xl mx-auto"><!-- Main Heart -->
+    <div class="mb-8 fade-in-up">
+     <svg class="mx-auto heart-glow heartbeat" width="120" height="120" viewbox="0 0 24 24" fill="#f472b6"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+     </svg>
+    </div><!-- Title -->
+    <h1 id="main-title" class="font-dancing text-6xl md:text-8xl text-gradient mb-4 fade-in-up delay-1" style="opacity: 0;">1 Año Juntos</h1><!-- Date Badge -->
+    <div class="fade-in-up delay-2 mb-8" style="opacity: 0;">
+     <div class="inline-flex items-center gap-3 card-glass rounded-full px-6 py-3 mb-3">
+      <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect> <line x1="16" y1="2" x2="16" y2="6"></line> <line x1="8" y1="2" x2="8" y2="6"></line> <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg><span class="text-pink-300 font-playfair text-lg">28/02/2025 - 28/02/2026</span>
+     </div>
+     <p class="text-pink-200 font-playfair text-sm">Nuestro primer año juntos</p>
+    </div><!-- Counter Card -->
+    <div class="card-glass rounded-3xl p-8 mb-8 fade-in-up delay-3" style="opacity: 0;">
+     <p class="text-pink-200 font-playfair text-xl mb-6">Desde el 28/02/2025 hemos compartido:</p>
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8" id="counter-grid">
+      <div class="bg-white/5 rounded-2xl p-4">
+       <div id="days" class="text-4xl md:text-5xl font-bold text-gradient font-playfair">
+        0
+       </div>
+       <div class="text-pink-300 text-sm mt-1">
+        Días
+       </div>
+      </div>
+      <div class="bg-white/5 rounded-2xl p-4">
+       <div id="hours" class="text-4xl md:text-5xl font-bold text-gradient font-playfair">
+        0
+       </div>
+       <div class="text-pink-300 text-sm mt-1">
+        Horas
+       </div>
+      </div>
+      <div class="bg-white/5 rounded-2xl p-4">
+       <div id="minutes" class="text-4xl md:text-5xl font-bold text-gradient font-playfair">
+        0
+       </div>
+       <div class="text-pink-300 text-sm mt-1">
+        Minutos
+       </div>
+      </div>
+      <div class="bg-white/5 rounded-2xl p-4">
+       <div id="seconds" class="text-4xl md:text-5xl font-bold text-gradient font-playfair">
+        0
+       </div>
+       <div class="text-pink-300 text-sm mt-1">
+        Segundos
+       </div>
+      </div>
+     </div>
+     <div class="border-t border-pink-300/20 pt-6">
+      <p class="text-pink-200 font-playfair text-xl mb-4">Faltan para el 28/02/2026: desde hoy 14/02/2026</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+       <div class="bg-white/5 rounded-2xl p-4">
+        <div id="next-days" class="text-3xl md:text-4xl font-bold text-pink-300 font-playfair">
+         365
+        </div>
+        <div class="text-pink-300 text-sm mt-1">
+         Días
+        </div>
+       </div>
+       <div class="bg-white/5 rounded-2xl p-4">
+        <div id="next-hours" class="text-3xl md:text-4xl font-bold text-pink-300 font-playfair">
+         0
+        </div>
+        <div class="text-pink-300 text-sm mt-1">
+         Horas
+        </div>
+       </div>
+       <div class="bg-white/5 rounded-2xl p-4">
+        <div id="next-minutes" class="text-3xl md:text-4xl font-bold text-pink-300 font-playfair">
+         0
+        </div>
+        <div class="text-pink-300 text-sm mt-1">
+         Minutos
+        </div>
+       </div>
+       <div class="bg-white/5 rounded-2xl p-4">
+        <div id="next-seconds" class="text-3xl md:text-4xl font-bold text-pink-300 font-playfair">
+         0
+        </div>
+        <div class="text-pink-300 text-sm mt-1">
+         Segundos
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- Love Message -->
+    <div class="card-glass rounded-3xl p-8 mb-8 fade-in-up delay-4" style="opacity: 0;">
+     <div class="flex justify-center mb-4">
+      <svg width="40" height="40" viewbox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+      </svg>
+     </div>
+     <div class="flex justify-center items-center gap-4 mb-4">
+      <p id="partner-name-1" class="font-dancing text-3xl text-pink-300">Angel</p>
+      <svg width="30" height="30" viewbox="0 0 24 24" fill="#f472b6"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+      </svg>
+      <p id="partner-name-2" class="font-dancing text-3xl text-pink-300">Daira</p>
+     </div>
+     <p id="love-message" class="font-playfair text-pink-100 text-lg leading-relaxed">Cada día a tu lado ha sido un regalo. Gracias por llenar mi vida de amor, risas y momentos inolvidables. Este es solo el primero de muchos años juntos. Te amo más de lo que las palabras pueden expresar. 💕</p>
+    </div><!-- Anniversary Rings -->
+    <div class="flex justify-center items-center gap-2 fade-in-up" style="opacity: 0; animation-delay: 1s;">
+     <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="1.5" class="float-animation" style="animation-delay: 0.5s;"><circle cx="12" cy="12" r="8" /> <circle cx="12" cy="12" r="5" />
+     </svg>
+     <svg width="24" height="24" viewbox="0 0 24 24" fill="#f472b6"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+     </svg>
+     <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="1.5" class="float-animation" style="animation-delay: 1s;"><circle cx="12" cy="12" r="8" /> <circle cx="12" cy="12" r="5" />
+     </svg>
+    </div><!-- Footer -->
+    <p class="mt-12 font-dancing text-2xl text-pink-400 fade-in-up" style="opacity: 0; animation-delay: 1.2s;">Por siempre y para siempre 💝</p>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      main_title: '1 Año Juntos',
+      love_message: 'Cada día a tu lado ha sido un regalo. Gracias por llenar mi vida de amor, risas y momentos inolvidables. Este es solo el primero de muchos años juntos. Te amo más de lo que las palabras pueden expresar. 💕',
+      partner_name_1: 'Angel',
+      partner_name_2: 'Daira',
+      background_color: '#1a1a2e',
+      accent_color: '#f472b6',
+      text_color: '#fce7f3',
+      surface_color: 'rgba(255, 255, 255, 0.05)',
+      secondary_accent: '#fb7185',
+      font_family: 'Playfair Display',
+      font_size: 16
+    };
+
+    let config = { ...defaultConfig };
+
+    // Calculate time since anniversary
+    function calculateTimeSince() {
+      const anniversary = new Date('2025-02-28T00:00:00');
+      const now = new Date();
+      const diff = now - anniversary;
+      
+      if (diff < 0) {
+        return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      }
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      return { days, hours, minutes, seconds };
+    }
+
+    // Calculate time until next anniversary
+    function calculateTimeUntil() {
+      const nextAnniversary = new Date('2026-02-28T00:00:00');
+      const now = new Date();
+      const diff = nextAnniversary - now;
+      
+      if (diff < 0) {
+        return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      }
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      return { days, hours, minutes, seconds };
+    }
+
+    function formatNumber(num) {
+      return num.toLocaleString('es-ES');
+    }
+
+    function updateCounter() {
+      const timeSince = calculateTimeSince();
+      const timeUntil = calculateTimeUntil();
+      
+      // Update time since
+      document.getElementById('days').textContent = formatNumber(timeSince.days);
+      document.getElementById('hours').textContent = formatNumber(timeSince.hours);
+      document.getElementById('minutes').textContent = formatNumber(timeSince.minutes);
+      document.getElementById('seconds').textContent = formatNumber(timeSince.seconds);
+      
+      // Update time until
+      document.getElementById('next-days').textContent = formatNumber(timeUntil.days);
+      document.getElementById('next-hours').textContent = formatNumber(timeUntil.hours);
+      document.getElementById('next-minutes').textContent = formatNumber(timeUntil.minutes);
+      document.getElementById('next-seconds').textContent = formatNumber(timeUntil.seconds);
+    }
+
+    async function onConfigChange(newConfig) {
+      const title = newConfig.main_title || defaultConfig.main_title;
+      const message = newConfig.love_message || defaultConfig.love_message;
+      const name1 = newConfig.partner_name_1 || defaultConfig.partner_name_1;
+      const name2 = newConfig.partner_name_2 || defaultConfig.partner_name_2;
+      const bgColor = newConfig.background_color || defaultConfig.background_color;
+      const accentColor = newConfig.accent_color || defaultConfig.accent_color;
+      const textColor = newConfig.text_color || defaultConfig.text_color;
+      const fontFamily = newConfig.font_family || defaultConfig.font_family;
+      const fontSize = newConfig.font_size || defaultConfig.font_size;
+
+      document.getElementById('main-title').textContent = title;
+      document.getElementById('love-message').textContent = message;
+      document.getElementById('partner-name-1').textContent = name1;
+      document.getElementById('partner-name-2').textContent = name2;
+
+      // Apply font
+      document.querySelectorAll('.font-playfair').forEach(el => {
+        el.style.fontFamily = `${fontFamily}, Playfair Display, serif`;
+      });
+
+      // Apply font size scaling
+      document.getElementById('love-message').style.fontSize = `${fontSize * 1.125}px`;
+    }
+
+    function mapToCapabilities(cfg) {
+      return {
+        recolorables: [
+          {
+            get: () => cfg.background_color || defaultConfig.background_color,
+            set: (value) => {
+              cfg.background_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => cfg.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              cfg.surface_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ surface_color: value });
+            }
+          },
+          {
+            get: () => cfg.text_color || defaultConfig.text_color,
+            set: (value) => {
+              cfg.text_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => cfg.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              cfg.accent_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ accent_color: value });
+            }
+          },
+          {
+            get: () => cfg.secondary_accent || defaultConfig.secondary_accent,
+            set: (value) => {
+              cfg.secondary_accent = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ secondary_accent: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => cfg.font_family || defaultConfig.font_family,
+          set: (value) => {
+            cfg.font_family = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => cfg.font_size || defaultConfig.font_size,
+          set: (value) => {
+            cfg.font_size = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(cfg) {
+      return new Map([
+        ['main_title', cfg.main_title || defaultConfig.main_title],
+        ['love_message', cfg.love_message || defaultConfig.love_message],
+        ['partner_name_1', cfg.partner_name_1 || defaultConfig.partner_name_1],
+        ['partner_name_2', cfg.partner_name_2 || defaultConfig.partner_name_2]
+      ]);
+    }
+
+    // Initialize
+    updateCounter();
+    setInterval(updateCounter, 1000);
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    } else {
+      onConfigChange(defaultConfig);
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c6cc267050885db',t:'MTc2OTg5OTczNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
